@@ -1,6 +1,4 @@
-#include <QtCore/QString>
-#include <QtTest/QtTest>
-#include <QtCore/QCoreApplication>
+#include <QtTest>
 #include <QListWidget>
 #include <QPointer>
 
@@ -34,7 +32,6 @@ private Q_SLOTS:
 private:
     QOSDNotification *createLoremNotification();
 
-    int defaultDuration;
     QString notificationTitle;
     QString loremIpsumText;
 };
@@ -51,7 +48,6 @@ QOSDNotification *tst_QOSDNotificationManager::createLoremNotification()
 void tst_QOSDNotificationManager::initTestCase()
 {
     qRegisterMetaType<QAbstractOSDNotification*>();
-    defaultDuration = 5000;
     notificationTitle = "Notification title";
     loremIpsumText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 }
@@ -67,6 +63,7 @@ void tst_QOSDNotificationManager::consistency()
     const int horizontalMargin = 10;
     const int verticalMargin = 10;
     const int spacing = 5;
+    const int defaultDuration = 5000;
     const int minimumNotificationWidth = 290;
     const int minimumNotificationHeight = 0;
     const int maximumNotificationWidth = QWIDGETSIZE_MAX;

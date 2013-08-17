@@ -6,8 +6,6 @@
 
 QT_BEGIN_NAMESPACE
 class QLabel;
-class QToolButton;
-class QStackedLayout;
 class QVBoxLayout;
 QT_END_NAMESPACE
 

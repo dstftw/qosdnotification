@@ -3,10 +3,6 @@
 
 #include <QWidget>
 
-QT_BEGIN_NAMESPACE
-class QPushButton;
-QT_END_NAMESPACE
-
 class CustomWidget : public QWidget
 {
     Q_OBJECT
