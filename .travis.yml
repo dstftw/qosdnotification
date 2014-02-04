@@ -10,3 +10,5 @@ script:
   - qmake -v
   - qmake
   - make
+  - tests/qosdnotificationmanager_tst/tst_qosdnotificationmanager
+  - tests/qosdnotification_tst/tst_qosdnotification
