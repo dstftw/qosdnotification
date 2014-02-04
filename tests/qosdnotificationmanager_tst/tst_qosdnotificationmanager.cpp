@@ -314,7 +314,7 @@ void tst_QOSDNotificationManager::addNotificationsAndTimeout()
     manager.add(&notification2);
 
     QOSDNotification notification3(notificationTitle + " #3", loremIpsumText);
-    notification3.setDuration(600);
+    notification3.setDuration(300);
     manager.add(&notification3);
 
     QOSDNotification notification4(notificationTitle + " #4", loremIpsumText);
