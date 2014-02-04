@@ -10,5 +10,6 @@ script:
   - qmake -v
   - qmake
   - make
+  - export LD_LIBRARY_PATH=lib/:$LD_LIBRARY_PATH
   - tests/qosdnotificationmanager_tst/tst_qosdnotificationmanager
   - tests/qosdnotification_tst/tst_qosdnotification
