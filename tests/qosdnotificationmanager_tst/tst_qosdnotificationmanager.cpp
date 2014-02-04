@@ -306,11 +306,11 @@ void tst_QOSDNotificationManager::addNotificationsAndTimeout()
     QOSDNotificationManager manager;
 
     QOSDNotification notification1(notificationTitle + " #1", loremIpsumText);
-    notification1.setDuration(1000);
+    notification1.setDuration(1500);
     manager.add(&notification1);
 
     QOSDNotification notification2(notificationTitle + " #2", loremIpsumText);
-    notification2.setDuration(800);
+    notification2.setDuration(900);
     manager.add(&notification2);
 
     QOSDNotification notification3(notificationTitle + " #3", loremIpsumText);
@@ -318,16 +318,16 @@ void tst_QOSDNotificationManager::addNotificationsAndTimeout()
     manager.add(&notification3);
 
     QOSDNotification notification4(notificationTitle + " #4", loremIpsumText);
-    notification4.setDuration(800);
+    notification4.setDuration(900);
     manager.add(&notification4);
 
     QOSDNotification notification5(notificationTitle + " #5", loremIpsumText);
-    notification5.setDuration(1000);
+    notification5.setDuration(1500);
     manager.add(&notification5);
 
     QSignalSpy finishedSpy(&manager, SIGNAL(finished(QAbstractOSDNotification*)));
 
-    QTest::qWait(650);
+    QTest::qWait(600);
 
     QCOMPARE(manager.count(), 4);
     QCOMPARE(finishedSpy.count(), 1);
@@ -338,7 +338,7 @@ void tst_QOSDNotificationManager::addNotificationsAndTimeout()
         QVERIFY(qvariant_cast<QAbstractOSDNotification*>(argument) == &notification3);
     }
 
-    QTest::qWait(200);
+    QTest::qWait(600);
 
     QCOMPARE(manager.count(), 2);
     QCOMPARE(finishedSpy.count(), 2);
@@ -352,7 +352,7 @@ void tst_QOSDNotificationManager::addNotificationsAndTimeout()
         }
     }
 
-    QTest::qWait(200);
+    QTest::qWait(600);
 
     QCOMPARE(manager.count(), 0);
     QCOMPARE(finishedSpy.count(), 2);
